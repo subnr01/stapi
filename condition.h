@@ -5,15 +5,15 @@
 
 class Condition : public Mutex
 {
-protected:
-    pthread_cond_t condition;
-public:
-    Condition(void);
-    ~Condition(void);
+    protected:
+        pthread_cond_t condition;
+    public:
+        Condition(void);
+        ~Condition(void);
 
-    void Wait(void);
-    void Signal(void);
-    void Broadcast(void);
+        void Wait(void);
+        void Signal(void);
+        void Broadcast(void);
 };
 
 #endif//CONDITION_H
