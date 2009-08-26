@@ -6,9 +6,15 @@ void Fork::Signal(int sig)
 {
     switch (sig)
     {
-        case SIGHUP: instance->OnHangup();
-        case SIGINT: instance->OnInterrupt();
-        case SIGTERM: instance->OnTerminate();
+        case SIGHUP:
+            instance->OnHangup();
+            break;
+        case SIGINT:
+            instance->OnInterrupt();
+            break;
+        case SIGTERM:
+            instance->OnTerminate();
+            break;
     }
 }
 
@@ -59,4 +65,14 @@ void Fork::Kill(int sig) throw(int&)
 void Fork::Detach(void)
 {
     pid = 0;
+}
+
+pid_t Fork::getChildPid(void)
+{
+    return pid;
+}
+
+pid_t Fork::getParentPid(void)
+{
+    return parent;
 }

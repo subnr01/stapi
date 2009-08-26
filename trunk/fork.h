@@ -27,6 +27,9 @@ class Fork
         void Start(void) throw(int&);
         void Kill(int sig = SIGINT) throw(int&);
         void Detach(void);
+
+        pid_t getChildPid(void);
+        pid_t getParentPid(void);
 };
 
 #endif//FORK_H
