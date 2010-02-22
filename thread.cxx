@@ -22,7 +22,7 @@ Thread::~Thread(void)
 
 void Thread::Start(void) throw(int&)
 {
-    error = pthread_create(&threadId, NULL, EntryPoint, this);
+    error = pthread_create(&threadId, NULL, Thread::EntryPoint, this);
     if (0 != error) throw error;
 }
 
