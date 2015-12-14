@@ -1,0 +1,1 @@
+Based on the ever popular pthread library, this library wraps up the easy threading capability into a C++ API that is even easier to use. This API includes most thread locking methods along with a fork'ing class.
